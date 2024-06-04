@@ -1,0 +1,303 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/stats_linear"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#FFECB3"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="horizontal">
+		<TextView
+			android:id="@+id/hungry_textview"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Голод:"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/hungry"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="100"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/enjoy_textview"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Настроение:"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/enjoy"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="100"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/timer_textview"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Таймер:"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/timer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="сжатых сроков нет"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/choose_sim_buttons_organism"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#FFECB3"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="horizontal">
+		<CheckBox
+			android:id="@+id/ref_button_checkbox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#FFF9C4"
+			android:text="Справочники"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<CheckBox
+			android:id="@+id/doc_button_checkbox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#FFF9C4"
+			android:text="Документы"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<CheckBox
+			android:id="@+id/report_button_checkbox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#FFF9C4"
+			android:text="Отчёты"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+	<ScrollView
+		android:id="@+id/oneassmulator_scroll"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:background="#FFF9C4">
+		<LinearLayout
+			android:id="@+id/simulatorOrganism"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/ref_linear"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/ref_text1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="Создание справочника"
+					android:textSize="25sp"
+					android:textColor="#000000" />
+				<TextView
+					android:id="@+id/ref_textstandart"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="Стандартные реквизиты справочника"
+					android:textSize="16sp"
+					android:textColor="#000000" />
+				<CheckBox
+					android:id="@+id/ref_checkbox"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Использовать стандартные реквизиты"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+				<TextView
+					android:id="@+id/ref_textcustom"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Собственные реквизиты справочника"
+					android:textSize="16sp"
+					android:textColor="#000000" />
+				<EditText
+					android:id="@+id/ref_edittext"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:hint="Введите реквизиты через запятую"
+					android:textColorHint="#607D8B"
+					android:singleLine="true" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/doc_linear"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/doc_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="Создание документа"
+					android:textSize="25sp"
+					android:textColor="#000000" />
+				<TextView
+					android:id="@+id/doc_textstandart"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="Стандартные реквизиты документа"
+					android:textSize="16sp"
+					android:textColor="#000000" />
+				<CheckBox
+					android:id="@+id/doc_checkbox"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Использовать стандартные реквизиты"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+				<TextView
+					android:id="@+id/doc_textcustom"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Собственные реквизиты документа"
+					android:textSize="16sp"
+					android:textColor="#000000" />
+				<EditText
+					android:id="@+id/doc_edittext"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:hint="Введите реквизиты через запятую"
+					android:textColorHint="#607D8B"
+					android:singleLine="true" />
+				<TextView
+					android:id="@+id/doc_reftext"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Ссылки на справочники"
+					android:textSize="16sp"
+					android:textColor="#000000" />
+				<EditText
+					android:id="@+id/doc_editref"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:hint="Введите наименование справочника"
+					android:textColorHint="#607D8B"
+					android:singleLine="true" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/report_linear"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/report_textview"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="Формирование отчёта"
+					android:textSize="25sp"
+					android:textColor="#000000" />
+				<TextView
+					android:id="@+id/report_textexample"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Надо написать такой код:"
+					android:textSize="16sp"
+					android:textColor="#000000" />
+				<TextView
+					android:id="@+id/report_example_textview"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="{ Hello, World};"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+				<EditText
+					android:id="@+id/report_edittext"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:hint="// КОД ПИСАТЬ СЮДА"
+					android:textColorHint="#607D8B" />
+				<CheckBox
+					android:id="@+id/req_checkbox"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Отчёт по регистрам"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+				<CheckBox
+					android:id="@+id/anal_checkbox"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Аналитический отчёт"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+			</LinearLayout>
+			<Button
+				android:id="@+id/end_button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dp"
+				android:padding="8dp"
+				android:background="#FFD740"
+				android:text="Сохранить и отправить"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

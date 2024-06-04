@@ -24,14 +24,15 @@
 			android:layout_gravity="center_horizontal">
 			<de.hdodenhof.circleimageview.CircleImageView
 				android:id="@+id/avatarImage"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
+				android:src="@drawable/cock1"
 				app:civ_border_width="3dp"
 				app:civ_border_color="#008DCD"
 				app:civ_circle_background_color="#FFFFFF"
 				app:civ_border_overlay="true" />
 			<LinearLayout
-				android:id="@+id/linear5"
+				android:id="@+id/stats_linear"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:padding="8dp"
@@ -45,14 +46,14 @@
 					android:textSize="12sp"
 					android:textColor="#000000" />
 				<LinearLayout
-					android:id="@+id/linear7"
+					android:id="@+id/lvl_molecule"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal"
 					android:layout_gravity="center_vertical">
 					<TextView
-						android:id="@+id/textview2"
+						android:id="@+id/textlevel"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -60,7 +61,7 @@
 						android:textSize="12sp"
 						android:textColor="#000000" />
 					<TextView
-						android:id="@+id/textview5"
+						android:id="@+id/level"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -69,14 +70,14 @@
 						android:textColor="#000000" />
 				</LinearLayout>
 				<LinearLayout
-					android:id="@+id/linear8"
+					android:id="@+id/hungry_molecule"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal"
 					android:layout_gravity="center_vertical">
 					<TextView
-						android:id="@+id/textview6"
+						android:id="@+id/hungertext"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -84,7 +85,7 @@
 						android:textSize="12sp"
 						android:textColor="#000000" />
 					<TextView
-						android:id="@+id/textview3"
+						android:id="@+id/hunger"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -93,14 +94,14 @@
 						android:textColor="#000000" />
 				</LinearLayout>
 				<LinearLayout
-					android:id="@+id/linear9"
+					android:id="@+id/enjoy_molecule"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal"
 					android:layout_gravity="center_vertical">
 					<TextView
-						android:id="@+id/textview7"
+						android:id="@+id/enjoytext"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -108,7 +109,7 @@
 						android:textSize="12sp"
 						android:textColor="#000000" />
 					<TextView
-						android:id="@+id/textview4"
+						android:id="@+id/enjoy"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -117,12 +118,12 @@
 						android:textColor="#000000" />
 				</LinearLayout>
 				<LinearLayout
-					android:id="@+id/linear10"
+					android:id="@+id/money_molecule"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:orientation="horizontal">
 					<TextView
-						android:id="@+id/textview8"
+						android:id="@+id/moneytext"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
@@ -130,7 +131,7 @@
 						android:textSize="12sp"
 						android:textColor="#000000" />
 					<TextView
-						android:id="@+id/textview9"
+						android:id="@+id/money"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"

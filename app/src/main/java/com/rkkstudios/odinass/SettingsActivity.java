@@ -7,16 +7,16 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.*;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.*;
 import android.graphics.*;
 import android.graphics.drawable.*;
 import android.media.*;
 import android.net.*;
-import android.net.Uri;
 import android.os.*;
 import android.text.*;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.style.*;
 import android.util.*;
 import android.view.*;
@@ -26,84 +26,79 @@ import android.view.animation.*;
 import android.webkit.*;
 import android.widget.*;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Switch;
 import java.io.*;
 import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 import org.json.*;
 
-public class MainActivity extends Activity {
+public class SettingsActivity extends Activity {
 	
-	private LinearLayout mainmenu_organism;
-	private ImageView image_appimage;
-	private TextView text_appname;
-	private Button playButton;
-	private LinearLayout buttons_molecule;
-	private Button infoButton;
-	private Button settingsButton;
+	private LinearLayout settingsOrganism;
+	private LinearLayout music_linear;
+	private LinearLayout sound_linear;
+	private LinearLayout nickname_linear;
+	private Button save_settings_button;
+	private Switch music_switch;
+	private Switch sound_switch;
+	private EditText edit_nickname;
+	private Button set_nick_button;
 	
-	private Intent ActivityChanger = new Intent();
 	private SharedPreferences saver;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.settings);
 		initialize(_savedInstanceState);
 		initializeLogic();
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
-		mainmenu_organism = findViewById(R.id.mainmenu_organism);
-		image_appimage = findViewById(R.id.image_appimage);
-		text_appname = findViewById(R.id.text_appname);
-		playButton = findViewById(R.id.playButton);
-		buttons_molecule = findViewById(R.id.buttons_molecule);
-		infoButton = findViewById(R.id.infoButton);
-		settingsButton = findViewById(R.id.settingsButton);
+		settingsOrganism = findViewById(R.id.settingsOrganism);
+		music_linear = findViewById(R.id.music_linear);
+		sound_linear = findViewById(R.id.sound_linear);
+		nickname_linear = findViewById(R.id.nickname_linear);
+		save_settings_button = findViewById(R.id.save_settings_button);
+		music_switch = findViewById(R.id.music_switch);
+		sound_switch = findViewById(R.id.sound_switch);
+		edit_nickname = findViewById(R.id.edit_nickname);
+		set_nick_button = findViewById(R.id.set_nick_button);
 		saver = getSharedPreferences("save", Activity.MODE_PRIVATE);
 		
-		playButton.setOnClickListener(new View.OnClickListener() {
+		save_settings_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (saver.getString("game", "").equals("") || saver.getString("game", "").equals("0")) {
-					saver.edit().putString("level", "1").commit();
-					saver.edit().putString("money", "0").commit();
-					saver.edit().putString("hunger", "100").commit();
-					saver.edit().putString("enjoy", "100").commit();
-					saver.edit().putString("xp", "0").commit();
-					saver.edit().putString("game", "2").commit();
-					saver.edit().putString("boss_angry", "0").commit();
-					saver.edit().putString("avatar", "1").commit();
-					saver.edit().putString("boss_task", "0").commit();
-					saver.edit().putString("opengamer", "0").commit();
-					saver.edit().putString("aftergame", "1").commit();
-					saver.edit().putString("angryboss", "10").commit();
-				}
-				if (saver.getString("nick", "").equals("")) {
-					saver.edit().putString("nick", "Петя").commit();
-				}
-				ActivityChanger.setClass(getApplicationContext(), GameActivity.class);
-				startActivity(ActivityChanger);
+				finish();
 			}
 		});
 		
-		infoButton.setOnClickListener(new View.OnClickListener() {
+		edit_nickname.addTextChangedListener(new TextWatcher() {
 			@Override
-			public void onClick(View _view) {
-				ActivityChanger.setClass(getApplicationContext(), AboutActivity.class);
-				startActivity(ActivityChanger);
+			public void onTextChanged(CharSequence _param1, int _param2, int _param3, int _param4) {
+				final String _charSeq = _param1.toString();
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence _param1, int _param2, int _param3, int _param4) {
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable _param1) {
+				
 			}
 		});
 		
-		settingsButton.setOnClickListener(new View.OnClickListener() {
+		set_nick_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				ActivityChanger.setClass(getApplicationContext(), SettingsActivity.class);
-				startActivity(ActivityChanger);
+				SketchwareUtil.showMessage(getApplicationContext(), "Ник установлен!");
+				saver.edit().putString("nick", edit_nickname.getText().toString()).commit();
 			}
 		});
 	}

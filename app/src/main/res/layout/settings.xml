@@ -1,0 +1,88 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/settingsOrganism"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:background="#FFF9C4"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical"
+		android:layout_gravity="center_horizontal|center_vertical">
+		<LinearLayout
+			android:id="@+id/music_linear"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="horizontal">
+			<Switch
+				android:id="@+id/music_switch"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Музыка"
+				android:textSize="12sp"
+				android:textColor="#000000"
+				android:checked="true" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/sound_linear"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="horizontal">
+			<Switch
+				android:id="@+id/sound_switch"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Звуки"
+				android:textSize="12sp"
+				android:textColor="#000000"
+				android:checked="true" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/nickname_linear"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="horizontal">
+			<EditText
+				android:id="@+id/edit_nickname"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:textSize="12sp"
+				android:textColor="#000000"
+				android:hint="Ваш никнейм: (по умолчанию Петя)"
+				android:textColorHint="#607D8B"
+				android:singleLine="true" />
+			<Button
+				android:id="@+id/set_nick_button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:background="#FFD740"
+				android:text="Установить"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+		</LinearLayout>
+		<Button
+			android:id="@+id/save_settings_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#FFD740"
+			android:text="Сохранить настройки"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+</LinearLayout>

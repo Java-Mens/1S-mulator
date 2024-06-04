@@ -26,7 +26,6 @@ import android.view.animation.*;
 import android.webkit.*;
 import android.widget.*;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.*;
@@ -35,80 +34,45 @@ import java.util.*;
 import java.util.regex.*;
 import org.json.*;
 
-public class MainActivity extends Activity {
+public class GameoverActivity extends Activity {
 	
-	private LinearLayout mainmenu_organism;
-	private ImageView image_appimage;
-	private TextView text_appname;
-	private Button playButton;
-	private LinearLayout buttons_molecule;
-	private Button infoButton;
-	private Button settingsButton;
+	private LinearLayout gameoverOrganism;
+	private TextView gameover_textview;
+	private TextView reason_textview;
+	private TextView reason;
+	private Button exitbutton;
 	
-	private Intent ActivityChanger = new Intent();
+	private Intent home = new Intent();
 	private SharedPreferences saver;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.gameover);
 		initialize(_savedInstanceState);
 		initializeLogic();
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
-		mainmenu_organism = findViewById(R.id.mainmenu_organism);
-		image_appimage = findViewById(R.id.image_appimage);
-		text_appname = findViewById(R.id.text_appname);
-		playButton = findViewById(R.id.playButton);
-		buttons_molecule = findViewById(R.id.buttons_molecule);
-		infoButton = findViewById(R.id.infoButton);
-		settingsButton = findViewById(R.id.settingsButton);
+		gameoverOrganism = findViewById(R.id.gameoverOrganism);
+		gameover_textview = findViewById(R.id.gameover_textview);
+		reason_textview = findViewById(R.id.reason_textview);
+		reason = findViewById(R.id.reason);
+		exitbutton = findViewById(R.id.exitbutton);
 		saver = getSharedPreferences("save", Activity.MODE_PRIVATE);
 		
-		playButton.setOnClickListener(new View.OnClickListener() {
+		exitbutton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (saver.getString("game", "").equals("") || saver.getString("game", "").equals("0")) {
-					saver.edit().putString("level", "1").commit();
-					saver.edit().putString("money", "0").commit();
-					saver.edit().putString("hunger", "100").commit();
-					saver.edit().putString("enjoy", "100").commit();
-					saver.edit().putString("xp", "0").commit();
-					saver.edit().putString("game", "2").commit();
-					saver.edit().putString("boss_angry", "0").commit();
-					saver.edit().putString("avatar", "1").commit();
-					saver.edit().putString("boss_task", "0").commit();
-					saver.edit().putString("opengamer", "0").commit();
-					saver.edit().putString("aftergame", "1").commit();
-					saver.edit().putString("angryboss", "10").commit();
-				}
-				if (saver.getString("nick", "").equals("")) {
-					saver.edit().putString("nick", "Петя").commit();
-				}
-				ActivityChanger.setClass(getApplicationContext(), GameActivity.class);
-				startActivity(ActivityChanger);
-			}
-		});
-		
-		infoButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				ActivityChanger.setClass(getApplicationContext(), AboutActivity.class);
-				startActivity(ActivityChanger);
-			}
-		});
-		
-		settingsButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				ActivityChanger.setClass(getApplicationContext(), SettingsActivity.class);
-				startActivity(ActivityChanger);
+				home.setClass(getApplicationContext(), MainActivity.class);
+				startActivity(home);
+				finish();
 			}
 		});
 	}
 	
 	private void initializeLogic() {
+		reason.setText(saver.getString("reason", ""));
 	}
 	
 	

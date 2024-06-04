@@ -1,0 +1,119 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<ScrollView
+		android:id="@+id/avatar_scroll"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:background="#FFF9C4">
+		<LinearLayout
+			android:id="@+id/avatarOrganism"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical">
+			<TextView
+				android:id="@+id/avatarpickertext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Выбор аватара"
+				android:textSize="25sp"
+				android:textColor="#000000" />
+			<TextView
+				android:id="@+id/lvl12text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="ТЫ НОВИЧОК\?\nУРОВЕНЬ 1-2"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+			<LinearLayout
+				android:id="@+id/linear3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="horizontal">
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/lvl1_image"
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:src="@drawable/cock1"
+					app:civ_border_width="3dp"
+					app:civ_border_color="#008DCD"
+					app:civ_circle_background_color="#FFFFFF"
+					app:civ_border_overlay="true" />
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/lvl2_image"
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:src="@drawable/cock2"
+					app:civ_border_width="3dp"
+					app:civ_border_color="#008DCD"
+					app:civ_circle_background_color="#FFFFFF"
+					app:civ_border_overlay="true" />
+			</LinearLayout>
+			<TextView
+				android:id="@+id/lvl34text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="ВОТ ЭТО ДРУГОЕ ДЕЛО!\nУРОВЕНЬ 3-4"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+			<LinearLayout
+				android:id="@+id/linear4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="horizontal">
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/lvl3_image"
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:src="@drawable/cock3"
+					app:civ_border_width="3dp"
+					app:civ_border_color="#008DCD"
+					app:civ_circle_background_color="#FFFFFF"
+					app:civ_border_overlay="true" />
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/lvl4_image"
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:src="@drawable/cock4"
+					app:civ_border_width="3dp"
+					app:civ_border_color="#008DCD"
+					app:civ_circle_background_color="#FFFFFF"
+					app:civ_border_overlay="true" />
+			</LinearLayout>
+			<TextView
+				android:id="@+id/lvl5text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="ЦАРЬ ГОРЫ\?\nУРОВЕНЬ 5"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/lvl5_image"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
+				android:src="@drawable/cock5"
+				app:civ_border_width="3dp"
+				app:civ_border_color="#008DCD"
+				app:civ_circle_background_color="#FFFFFF"
+				app:civ_border_overlay="true" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
